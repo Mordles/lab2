@@ -18,13 +18,19 @@ GPIO.setup(in1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 # Make threaded callback function
 def LEDwithButton(pin):
-  GPIO.output(pin, 0)
-  time.sleep(.5)
-  GPIO.output(pin, 1)
-  time.sleep(.5)
+  if (pin==in1):
+    GPIO.output(out1, 0)
+    time.sleep(.5)
+    GPIO.output(out1, 1)
+    time.sleep(.5)
+  elif (pin==in2):
+    GPIO.output(out2, 0)
+    time.sleep(.5)
+    GPIO.output(out2, 1)
+    time.sleep(.5)
 
-GPIO.add_event_detect(in1, GPIO.RISING, callback=LEDwithButton(26), bouncetime=100)
-GPIO.add_event_detect(in2, GPIO.RISING, callback=LEDwithButton(19), bouncetime=100)
+GPIO.add_event_detect(in1, GPIO.RISING, callback=LEDwithButton, bouncetime=100)
+GPIO.add_event_detect(in2, GPIO.RISING, callback=LEDwithButton, bouncetime=100)
 
 try:
   while True:
