@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 import time
+# Use port numbering
+GPIO.setmode(GPIO.BCM)
 # Declare output ports
 out1 = 26
 out2 = 19
@@ -7,8 +9,6 @@ out3 = 13
 # Declare input ports
 in1 = 21
 in2 = 20
-# Use port numbering
-GPIO.setmode(GPIO.BCM)
 # Set out1, out2, and out3 as output ports
 GPIO.setup(out1, GPIO.OUT)
 GPIO.setup(out2, GPIO.OUT)
