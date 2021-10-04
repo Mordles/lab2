@@ -24,6 +24,7 @@ def LEDwithButton(pin):
     GPIO.output(out1, 1)
     time.sleep(.5)
     GPIO.output(out1, 0)
+    print('LED')
   elif (pin==in2):
     GPIO.output(out2, 0)
     time.sleep(.5)
