@@ -23,8 +23,8 @@ def LEDwithButton(pin):
   GPIO.output(pin, 1)
   time.sleep(.5)
 
-GPIO.add_event_detect(in1, GPIO.RISING, callback=LEDwithButton(out1), bouncetime=100)
-GPIO.add_event_detect(in2, GPIO.RISING, callback=LEDwithButton(out2), bouncetime=100)
+GPIO.add_event_detect(in1, GPIO.RISING, callback=LEDwithButton(26), bouncetime=100)
+GPIO.add_event_detect(in2, GPIO.RISING, callback=LEDwithButton(19), bouncetime=100)
 
 try:
   while True:
