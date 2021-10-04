@@ -23,11 +23,13 @@ def LEDwithButton(pin):
     time.sleep(.5)
     GPIO.output(out1, 1)
     time.sleep(.5)
+    GPIO.output(out1, 0)
   elif (pin==in2):
     GPIO.output(out2, 0)
     time.sleep(.5)
     GPIO.output(out2, 1)
     time.sleep(.5)
+    GPIO.output(out2, 0)
 
 GPIO.add_event_detect(in1, GPIO.RISING, callback=LEDwithButton, bouncetime=100)
 GPIO.add_event_detect(in2, GPIO.RISING, callback=LEDwithButton, bouncetime=100)
