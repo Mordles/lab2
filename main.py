@@ -15,7 +15,7 @@ GPIO.setup(out2, GPIO.OUT)
 GPIO.setup(out3, GPIO.OUT)
 # Set in1 and in2 as input ports and activate pull down
 GPIO.setup(in1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(in2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(in2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Make threaded callback function
 def LEDwithButton(pin):
   if (pin==in1):
